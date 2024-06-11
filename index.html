@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>A Bookish Directory</h1>
+
+    <div id="authors"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        console.log("DOM Ready!");
+        const response = await fetch("http://localhost:8000/author");
+        const authors = await response.json();
+        console.log("AUTHORS??", authors);
+        const authorsEl = document.querySelector("#authors");
+
+        authors.map((author) => {
+          const paragraph = document.createElement("p");
+          paragraph.innerText = author.name;
+          authorsEl.appendChild(paragraph);
+        });
+      });
+    </script>
+  </body>
+</html>
