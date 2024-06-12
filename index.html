@@ -7,13 +7,14 @@
   </head>
   <body>
     <h1>A Bookish Directory</h1>
-
-    <div id="authors"></div>
+    <div id="authors">Authors:</div>
+    <div id="titles">Titles:</div>
     <script>
       document.addEventListener("DOMContentLoaded", async () => {
         console.log("DOM Ready!");
-        const response = await fetch("http://localhost:8000/author");
-        const authors = await response.json();
+
+        const authorsResponse = await fetch("http://localhost:8000/author");
+        const authors = await authorsResponse.json();
         console.log("AUTHORS??", authors);
         const authorsEl = document.querySelector("#authors");
 
@@ -21,6 +22,16 @@
           const paragraph = document.createElement("p");
           paragraph.innerText = author.name;
           authorsEl.appendChild(paragraph);
+        });
+        const titlesResponse = await fetch("http://localhost:8000/title");
+        const titles = await titlesResponse.json();
+        console.log("TITLES??", titles);
+        const titlesEl = document.querySelector("#titles");
+
+        titles.map((title) => {
+          const paragraph = document.createElement("p");
+          paragraph.innerText = title.name;
+          titlesEl.appendChild(paragraph);
         });
       });
     </script>

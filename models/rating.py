@@ -3,7 +3,7 @@ from.base import Base
 class Ratings(Base, table=True):
     __tablename__ = "ratings"
     
-    name: int
+    rating: int
  
     def __repr__(self):
-        return f"<Rating {self.name!r}>"
+        return f"<Rating {self.rating!r}>"
