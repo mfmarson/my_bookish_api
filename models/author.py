@@ -1,6 +1,7 @@
 from.base import Base
+from sqlmodel import SQLModel, Field
 
-class Authors(Base, table=True):
+class Authors(Base, SQLModel, table=True):
     __tablename__ = "authors"
     
     name: str

@@ -3,37 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>The Time Traveling Mouse</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>A Bookish Directory</h1>
-    <div id="authors">Authors:</div>
-    <div id="titles">Titles:</div>
-    <script>
-      document.addEventListener("DOMContentLoaded", async () => {
-        console.log("DOM Ready!");
-
-        const authorsResponse = await fetch("http://localhost:8000/author");
-        const authors = await authorsResponse.json();
-        console.log("AUTHORS??", authors);
-        const authorsEl = document.querySelector("#authors");
-
-        authors.map((author) => {
-          const paragraph = document.createElement("p");
-          paragraph.innerText = author.name;
-          authorsEl.appendChild(paragraph);
-        });
-        const titlesResponse = await fetch("http://localhost:8000/title");
-        const titles = await titlesResponse.json();
-        console.log("TITLES??", titles);
-        const titlesEl = document.querySelector("#titles");
-
-        titles.map((title) => {
-          const paragraph = document.createElement("p");
-          paragraph.innerText = title.name;
-          titlesEl.appendChild(paragraph);
-        });
-      });
-    </script>
+    <!-- main page -->
+    <main>
+      <nav>
+        <div class="titleText">The Time Traveling Mouse</div>
+      </nav>
+      <section>
+        <h1>Welcome!</h1>
+        <p>
+          With The Time Traveling Mouse, every turn of a page takes you on a
+          journey beyond the ordinary. Log your reads, rate them, and watch as
+          your digital bookshelf flourishes, reflecting your unique literary
+          journey.
+          <br />
+          Dive into a universe of books, discovering new titles that transport
+          you through time and space, whisking you away to distant lands and
+          eras long past.
+          <br />
+          With a vast library at your fingertips, you can get random reading
+          suggestions tailored to help you make every selection a thrilling new
+          discovery. Whether you're curled up at home or on the go, The Time
+          Traveling Mouse ensures that your next adventure is always within
+          reach.
+          <br />
+          Embark on a journey where every book is a doorway to new worlds, and
+          every story a path to wonder and excitement. Let your imagination
+          soar, your curiosity thrive, and your bookshelf grow.
+          <br />
+          <br />
+          <strong>Adventure awaits, and it's just a page away!</strong>
+        </p>
+        <section>
+          <div class="hobbitDoor">
+            <img
+              class="hobbitDoor"
+              src="/Users/meganmarson/Documents/Pictures/hobbit-door-svgrepo-com.svg"
+            />
+            <div class="buttonContainer">
+              <button id="enterButton" type="button">ENTER</button>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- <footer>
+        <img
+          src="/Users/meganmarson/Downloads/Mouse.Books.png"
+          alt="Mouse with Books"
+        />
+        <h2>Created by: Megan Marson</h2>
+        <img
+          src="/Users/meganmarson/Downloads/Mouse.Books.png"
+          alt="Mouse with Books"
+        />
+      </footer> -->
+    </main>
+    <script src="main.js"></script>
   </body>
 </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles1.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div class="titleText">Welcome To Your Library</div>
+      </nav>
+      <ul>
+        <li>Log In</li>
+        <li>Register</li>
+        <li class="search-container">
+          Search Your Books
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button>Enter</button>
+          </div>
+        </li>
+        <!-- <li>Search Your Books</li> -->
+        <li>
+          <a href="https://www.goodreads.com/">Find Your Next Adventure</a>
+        </li>
+      </ul>
+      <section class="directions">
+        <!-- <header>Welcome!</header> -->
+        <p>
+          Sign up or log in to start your journey. Explore your bookshelf by
+          searching for books across various categories. <br />Add books to your
+          collection, or find your next adventure with suggestions and random
+          picks. <br />Enjoy seamless reading adventures anytime, anywhere with
+          The Time Traveling Mouse!
+        </p>
+      </section>
+
+      <section class="addBook">
+        <h1 id="newBook">Log Your Latest Adventure!</h1>
+        <form id="bookForm" action="/add" method="post">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required /><br />
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required /><br />
+          <label for="rating">Rating:</label>
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            step="1"
+            required
+          /><br />
+          <input id="submitBook" type="submit" value="Add Book" />
+        </form>
+
+        <h1 class="bookList">Your Library</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Book ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody id="booksTableBody">
+            <tr>
+              <td>{{ book.id }}</td>
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.rating }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- <footer>
+        <img
+          src="/Users/meganmarson/Downloads/Mouse.Books.png"
+          alt="Mouse with Books"
+        />
+        <h2 class="footerText">Created by: Megan Marson</h2>
+        <img
+          src="/Users/meganmarson/Downloads/Mouse.Books.png"
+          alt="Mouse with Books"
+        />
+      </footer> -->
+    </main>
+    <script src="main1.js"></script>
+  </body>
+</html>
